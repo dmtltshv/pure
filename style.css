@@ -1,6 +1,6 @@
   html { scroll-behavior: smooth; }
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Inter', sans-serif; color: #fff;background-image: url(/img/bg.png); background-attachment: fixed;  background-size: cover;
+    body { font-family: 'Inter', sans-serif; color: #fff;background-image: url(/img/bg.webp); background-attachment: fixed;  background-size: cover;
     background-position: center;}
     button {
       font-family: 'Inter', sans-serif;
