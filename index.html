@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PURE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    html { scroll-behavior: smooth; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; color: #fff;background-image: url(/img/bg.png); background-attachment: fixed;  background-size: cover;
+    background-position: center;}
+    button {
+      font-family: 'Inter', sans-serif;
+    }
+   a {
+    all: unset;
+  }
+    /* HEADER */
+    .header {
+    position: fixed;
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    }
+
+    /* ЛОГОТИП — центр мира :) */
+    .logo {
+    font-size: 26px;
+    color: white;
+    letter-spacing: 6px;
+    font-weight: bold;
+    pointer-events: none;
+    }
+
+    /* ЛЕВАЯ И ПРАВАЯ ПАНЕЛЬ */
+    .nav-left, .nav-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 15px;
+    }
+
+    .nav-left { left: 40px; }
+    .nav-right { right: 40px; }
+
+    /* КНОПКИ */
+    .nav-btn,
+    .btn-telegram {
+    padding: 10px 20px;
+    border-radius: 30px;
+    white-space: nowrap;
+    border: none;
+    cursor: pointer;
+    }
+
+    .btn-telegram {
+    background: #0088cc;
+    color: white;
+    }
+
+    #jobs {
+      scroll-margin-top: 250px; 
+    }
+
+    /* ======== БУРГЕР ======== */
+
+    .burger {
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: none; /* появится на мобилке */
+    width: 30px;
+    height: 22px;
+    flex-direction: column;
+    justify-content: space-between;
+    background: none;
+    border: none;
+    cursor: pointer;
+    }
+
+    .burger span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: white;
+    border-radius: 3px;
+    }
+
+    /* ======== МОБИЛЬНОЕ МЕНЮ ======== */
+
+   .mobile-menu {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 1px solid #333;
+
+    /* скрытие + плавность */
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+    /* активное состояние */
+.mobile-menu.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+    /* ======== АДАПТИВ ======== */
+
+    @media (max-width: 768px) {
+
+    .nav-left,
+    .nav-right {
+        display: none; /* прячем кнопки */
+    }
+
+    .burger {
+        display: flex; /* показываем бургер */
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+    }
+
+    .btn-telegram {
+    display: inline-flex;
+    align-items: center;
+    background-color: #0088cc;
+    color: #fff;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    text-decoration: none;
+    transition: background 0.3s ease;
+    }
+
+     .btn-telegram:hover {
+        background-color: #006699;
+        color: #fff;
+        text-decoration: none;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      background: url('hero-bg.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+       padding: 200px 60px 80px;
+    }
+
+    .hero-inner {
+      display: grid;
+       grid-template-columns: 1.2fr 420px; /* увеличил правый блок */
+  gap: 90px; /* больше расстояние между текстом и формой */
+  max-width: 1400px; /* шире контейнер */
+  margin: 0 auto;
+    }
+
+    .hero-title {
+      font-size: 64px;
+      line-height: 1.2;
+      font-weight: 700;
+      max-width: 650px;
+    }
+
+    .hero-list {
+      margin-top: 28px;
+      list-style: none;
+      font-size: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .hero-list li::before {
+      content: '•';
+      margin-right: 10px;
+      color: #ff8f45;
+      font-weight: bold;
+    }
+
+    /* ===== FORM ===== */
+    .hero-form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 16px;
+      padding: 38px;
+      backdrop-filter: blur(10px);
+      max-width: 420px;
+    }
+
+    .form-title {
+      font-size: 22px;
+      color: #ddd;
+      margin-bottom: 16px;
+      line-height: 1.4;
+      text-align: center;
+    }
+
+    input {
+      width: 100%;
+      padding: 16px 22px;
+      margin-bottom: 10px;
+      border-radius: 40px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      background: transparent;
+      color: #fff;
+      outline: none;
+      font-size: 14px;
+    }
+
+    .btn-submit {
+      width: 100%;
+      padding: 14px;
+      border-radius: 40px;
+      background: #ff8f45;
+      border: none;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn-submit:hover {
+      background: #ff7b2f;
+      transform: translateY(-2px);
+    }
+
+    /* Responsive hero */
+    @media (max-width: 992px) {
+        .hero {
+    padding: 150px 30px 100px;
+  }
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+      }
+      .hero-title {
+        font-size: 46px;
+        margin: 0 auto;
+      }
+       .hero-list {
+    font-size: 18px;
+  }
+      .hero-form {
+        margin: 0 auto;
+         max-width: 380px;
+    padding: 32px;
+      }
+    }
+
+    @media (max-width: 600px) {
+  .hero-title {
+    font-size: 36px;
+  }
+  .hero-form {
+    max-width: 330px;
+    padding: 26px;
+  }
+  input {
+    font-size: 15px;
+  }
+  .btn-submit {
+    font-size: 15px;
+  }
+}
+
+    /* ===== WORK ===== */
+    .work {
+      padding: 80px 40px;
+      background: linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.45));
+      background-image: url('work-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+    }
+
+    .work-inner { max-width: 1200px; margin: 0 auto; }
+
+    .work-title {
+      text-align: center;
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 36px;
+      letter-spacing: 1px;
+    }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px 26px;
+    }
+
+    .work-card {
+      background: rgba(0,0,0,0.35);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 22px;
+      min-height: 120px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      backdrop-filter: blur(8px);
+    }
+
+    .work-card h3 { font-size: 16px; margin-bottom: 8px; font-weight: 600; }
+    .work-card p { font-size: 13px; line-height: 1.45; color: rgba(255,255,255,0.85); }
+    .work-card:hover {
+       transform: translateY(-6px); box-shadow: 0 8px 20px rgba(0,0,0,0.25); 
+    }
+
+    @media (max-width: 992px) { .work-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px) {
+      .work { padding: 40px 18px; }
+      .work-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ===== INTERIOR ===== */
+    .interior {
+      padding: 80px 40px;
+      text-align: center;
+    }
+
+    .interior-inner {
+  position: relative;
+}
+
+    .interior-title { font-size: 32px; font-weight: 700; margin-bottom: 10px; }
+    .interior-sub { font-size: 15px; opacity: 0.85; margin-bottom: 34px; }
+
+    .carousel-wrapper {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    overflow: hidden;
+    }
+
+    .carousel-track {
+    display: flex;
+    transition: transform 0.4s ease;
+    }
+
+    .carousel-item {
+    width: 100%;
+    border-radius: 18px;
+    flex-shrink: 0;
+    }
+
+ .carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.carousel-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.4);
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.carousel-dot.active {
+  background: #ff8f45;
+  transform: scale(1.2);
+}
+
+
+
+  /* ===== JOBS ===== */
+.jobs { 
+  padding: 80px 40px;
+  text-align: center;
+  color: #fff;
+}
+
+.jobs-title { 
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.jobs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  justify-items: center;
+  justify-content: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.job-card {
+  margin-top: 25px;
+  position: relative;
+  background: rgba(0,0,0,0.35);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px;
+  padding: 160px 24px 30px;
+  backdrop-filter: blur(10px);
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.job-card:hover { 
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+/* Картинки, красиво выходящие сверху */
+.job-img {
+  position: absolute;
+  width: 260px;
+  top: -38%;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.job-role {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.job-role span { 
+  color: #ff8f45;
+}
+
+.job-reqs {
+  list-style: none;
+  font-size: 14px;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.job-reqs li {
+  margin-bottom: 8px;
+  padding-left: 14px;
+  position: relative;
+}
+
+.job-reqs li::before {
+  content: "•";
+  color: #ff8f45;
+  position: absolute;
+  left: 0;
+}
+
+.job-btn {
+  background: #ff7b2f;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+.job-btn:hover { 
+  background: #ff8f45;
+  transform: translateY(-2px);
+}
+
+/* ===== ADAPTIVE ===== */
+@media (max-width: 950px) {
+  .job-img {
+    width: 230px;
+    top: -32%;
+  }
+}
+
+@media (max-width: 750px) {
+  .job-card {
+    padding-top: 140px;
+  }
+  .job-img {
+    width: 210px;
+    top: -28%;
+  }
+}
+
+@media (max-width: 550px) {
+  .job-card {
+    padding-top: 130px;
+  }
+  .job-img {
+    width: 190px;
+    top: -26%;
+  }
+}
+
+
+    /* ===== REVIEWS ===== */
+    .reviews { padding: 90px 40px; text-align: center; color: #fff;}
+    .reviews-title { font-size: 32px; font-weight: 700; margin-bottom: 12px; }
+    .reviews-sub { font-size: 15px; opacity: 0.85; margin-bottom: 48px; }
+    .reviews-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px; justify-items: center;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    @media (max-width: 1039px) {
+        .reviews-grid > :nth-child(3) {
+    grid-column: 1 / -1;
+    justify-self: center;
+}
+
+    }
+    .review-card {
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 18px;
+      padding: 26px 24px 36px;
+      backdrop-filter: blur(8px);
+      max-width: 340px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .review-card:hover { transform: translateY(-6px); box-shadow: 0 8px 20px rgba(0,0,0,0.25); }
+    .review-img { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-bottom: 16px; border: 2px solid #ff8f45; }
+    .review-name { font-size: 18px; font-weight: 600; margin-bottom: 12px; color: #ff8f45; }
+    .review-text { font-size: 14px; line-height: 1.55; color: rgba(255,255,255,0.9); max-width: 280px; }
+
+    /* ===== CALCULATOR ===== */
+    .calc-wrapper {
+        padding: 100px 40px;
+        color: #fff;
+        text-align: center;
+        display: flex;
+         justify-content: center;   /* центрирует оба блока */
+    align-items: center;    /* выравнивает по верхнему краю */
+    gap: 40px; 
+        flex-wrap: wrap;
+    }
+
+    .calculator-inner {
+        max-width: 460px;
+        width: 100%;
+    }
+
+    .calc-title {
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 40px;
+        letter-spacing: 1px;
+    }
+
+    .calc-box {
+        background: rgba(0, 0, 0, 0.35);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: 36px 28px;
+        backdrop-filter: blur(10px);
+        text-align: left;
+    }
+
+    .calc-group {
+        margin-bottom: 26px;
+    }
+
+    .calc-label {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    .calc-options {
+        display: flex;
+        gap: 10px;
+    }
+
+    .calc-btn {
+        background: rgba(255, 255, 255, 0.15);
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        width: 44px;
+        height: 44px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.25s ease;
+    }
+
+    .calc-btn:hover {
+        background: rgba(255, 255, 255, 0.3);
+    }
+
+    .calc-btn.active {
+        background: #ff8f45;
+    }
+
+    .calc-result {
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .calc-sum {
+        font-size: 40px;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    .calc-desc {
+        font-size: 15px;
+        line-height: 1.4;
+        color: rgba(255, 255, 255, 0.85);
+    }
+
+    @media (max-width: 600px) {
+        .calculator {
+            padding: 60px 20px;
+        }
+
+        .calc-box {
+            padding: 28px 20px;
+        }
+    }
+
+    /* ===== PROGRESS BAR ===== */
+    .calc-progress {
+        width: 100%;
+        height: 10px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 5px;
+        overflow: hidden;
+        margin: 12px 0 16px;
+    }
+
+    .calc-progress-bar {
+        height: 100%;
+        width: 0%;
+        background: linear-gradient(90deg, #ff8f45, #ffb56c);
+        transition: width 0.8s ease;
+        border-radius: 5px;
+    }
+
+    .afford-block {
+  padding: 20px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6));
+  color: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  animation: fadeIn 0.5s ease;
+  max-width: 460px;
+        width: 100%;
+}
+
+.afford-title {
+  margin: 0 0 15px 0;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.afford-list {
+    
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.afford-list li {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 12px 15px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.afford-custom {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.afford-custom input {
+  flex: 1;
+  min-width: 140px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 15px;
+}
+
+.afford-custom button {
+  height: 39px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: none;
+  background: #ff7b2f;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.afford-custom button:hover {
+  background: #ff8f45;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+
+    /* ===== CTA ===== */
+    .cta {
+      padding: 80px 40px;
+      text-align: center;
+      color: #fff;
+    }
+    .cta-inner h2 { font-size: 36px; font-weight: 700; margin-bottom: 12px; }
+    .cta-inner p { font-size: 16px; opacity: 0.85; margin-bottom: 24px; }
+    .cta-btn {
+      background: #ff7b2f; color: #fff; font-weight: 600; border: none;
+      padding: 14px 32px; border-radius: 40px; font-size: 16px;
+      cursor: pointer; transition: all 0.3s ease;
+    }
+    .cta-btn:hover { background: #ff8f45 }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: rgba(0, 0, 0, 0.9);
+      padding: 40px 20px;
+      color: rgba(255,255,255,0.8);
+      text-align: center;
+      font-size: 14px;
+      line-height: 1.6;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .footer a { color: #ff8f45; text-decoration: none; transition: color 0.3s ease; }
+    .footer a:hover { color: #ffb56c; }
+
+    /* Фон затемнения */
+.alert {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.55);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+    z-index: 9999;
+}
+
+/* Оболочка */
+.alert-box {
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 16px;
+    padding: 24px 32px;
+    width: 320px;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    animation: alertShow 0.25s ease;
+    box-shadow: 0 0 25px rgba(255, 143, 69, 0.25);
+}
+
+/* Анимация появления */
+@keyframes alertShow {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#alertMessage {
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+/* Кнопка */
+#alertOk {
+    padding: 10px 26px;
+    border-radius: 40px;
+    border: none;
+    background: #ff8f45;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.25s;
+}
+
+#alertOk:hover {
+    background: #ff7b2f;
+    transform: translateY(-2px);
+}
+
+
+  </style>
+</head>
+
+<body>
+
+<header class="header">
+    <div class="nav-left">
+        <button class="nav-btn"><a href="#jobs">Вакансии</a></button>
+    </div>
+
+    <div class="logo">P U R E</div>
+
+    <div class="nav-right">
+        <button class="nav-btn scroll-to-form">Заполнить анкету</button>
+        <button class="btn-telegram"><a href="https://t.me/purestudi0" target="_blank">Telegram</a></button>
+    </div>
+
+    <!-- Бургер -->
+    <button class="burger" id="burgerBtn">
+        <span></span><span></span><span></span>
+    </button>
+
+    <!-- Мобильное меню -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="nav-btn"><a href="#jobs">Вакансии</a></button>
+        <button class="nav-btn scroll-to-form">Заполнить Анкету</button>
+        <button class="btn-telegram"><a href="https://t.me/purestudi0" target="_blank">Telegram</a></button>
+    </div>
+</header>
+
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="left">
+      <h1 class="hero-title">РАБОТА<br>В ВЕБКАМ СТУДИИ<br>В ЦЕНТРЕ СПБ</h1>
+      <ul class="hero-list">
+        <li>Комфортные условия</li>
+        <li>Офис в самом центре Санкт-Петербурга</li>
+        <li>Уютный интерьер</li>
+        <li>Гарантированно высокий доход</li>
+        <li>Принимаем и парней и девушек</li>
+      </ul>
+    </div>
+
+   <form class="hero-form" id="tgForm">
+      <h3 class="form-title">Запишись на собеседование</h3>
+
+      <input type="text" name="name" placeholder="Имя" required>
+      <input type="text" name="age" placeholder="Возраст" required>
+      <input type="text" name="contacts" placeholder="Telegram или телефон" required>
+      <button type="submit" class="btn-submit">Записаться на собеседование</button>
+      <p class="form-status" id="formStatus" style="display:none;"></p>
+  </form>
+  </div>
+</section>
+
+<!-- ===== WORK IN PURE ===== -->
+<section class="work">
+  <div class="work-inner">
+    <h2 class="work-title">РАБОТА В PURE</h2>
+
+    <div class="work-grid">
+      <div class="work-card" data-aos="fade-up">
+        <h3>Средний заработок моделей</h3>
+        <p>От 80 000 ₽ в месяц. Но есть и те кто зарабатывает до 150 000 ₽ в неделю.</p>
+      </div>
+
+      <div class="work-card" data-aos="fade-up">
+        <h3>Регулярные выплаты ЗП</h3>
+        <p>Стабильно платим заработную плату 1 раз в 2 недели по актуальному курсу.</p>
+      </div>
+
+      <div class="work-card" data-aos="fade-up">
+        <h3>Растущий процент выплат</h3>
+        <p>Прозрачная система дохода и лёгкие условия для высокого % — это про нас.</p>
+      </div>
+
+      <div class="work-card" data-aos="fade-up">
+        <h3>Ежедневные выплаты</h3>
+        <p>Для новых моделей первые 5 смен мы оплачиваем день в день.</p>
+      </div>
+
+      <div class="work-card" data-aos="fade-up">
+        <h3>Бонус “приведи друга”</h3>
+        <p>Платим 15 000 ₽ за девушку и 5 000 ₽ за парня.</p>
+      </div>
+
+      <div class="work-card" data-aos="fade-up">
+        <h3>Постоянное развитие</h3>
+        <p>Фотосеты, посты, развитие аккаунтов — делает администратор.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== INTERIOR ===== -->
+<section class="interior">
+  <div class="interior-inner">
+    <h2 class="interior-title">НАШ ИНТЕРЬЕР</h2>
+    <p class="interior-sub">Комфортные, чистые и современные интерьеры в которых работают наши модели.</p>
+
+    <div class="carousel-wrapper" data-aos="fade-up">
+      <div class="carousel-track">
+        <img src="/img/interior1.jpg" class="carousel-item">
+        <img src="/img/interior2.jpg" class="carousel-item">
+        <img src="/img/interior3.jpg" class="carousel-item">
+        <img src="/img/interior4.jpg" class="carousel-item">
+      </div>
+    </div>
+    <div class="carousel-dots" id="carouselDots"></div>
+  </div>
+</section>
+
+<!-- ===== JOBS ===== -->
+<section class="jobs" id="jobs">
+  <div class="jobs-inner">
+    <h2 class="jobs-title">НАШИ ВАКАНСИИ</h2>
+
+    <div class="jobs-grid">
+      <!-- CARD 1 -->
+      <div class="job-card" data-aos="fade-up">
+        <img src="/img/model-male.png" alt="Модель парень" class="job-img">
+        <h3 class="job-role">Веб - Модель<br><span>Парень</span></h3>
+        <ul class="job-reqs">
+          <li>18 лет</li>
+          <li>Опрятный внешний вид</li>
+          <li>Желание работать и зарабатывать</li>
+        </ul>
+        <button class="job-btn scroll-to-form">Записаться на собеседование</button>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="job-card" data-aos="fade-up">
+        <img src="/img/model-female.png" alt="Модель девушка" class="job-img">
+        <h3 class="job-role">Веб - Модель<br><span>Девушка</span></h3>
+        <ul class="job-reqs">
+          <li>18 лет</li>
+          <li>Опрятный внешний вид</li>
+          <li>Желание работать и зарабатывать</li>
+        </ul>
+        <button class="job-btn scroll-to-form">Записаться на собеседование</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== REVIEWS ===== -->
+<section class="reviews">
+  <div class="reviews-inner">
+    <h2 class="reviews-title">ОТЗЫВЫ НАШИХ МОДЕЛЕЙ</h2>
+    <p class="reviews-sub">Мы ценим комфорт, поддержку и развитие каждого, кто работает в PURE</p>
+
+    <div class="reviews-grid">
+      <!-- REVIEW 1 -->
+      <div class="review-card" data-aos="zoom-in">
+        <img src="/img/review1.jpg" alt="Фото модели" class="review-img">
+        <h3 class="review-name">Анна</h3>
+        <p class="review-text">
+          Работаю здесь уже полгода — отличная атмосфера, классная команда и реально высокий доход.
+          Всё прозрачно, никаких сюрпризов.
+        </p>
+      </div>
+
+      <!-- REVIEW 2 -->
+      <div class="review-card" data-aos="zoom-in">
+        <img src="/img/review3.jpg" alt="Фото модели" class="review-img">
+        <h3 class="review-name">Максим</h3>
+        <p class="review-text">
+          Никогда не думал, что это может быть так интересно!  
+          Руководство помогает, дают советы, обучают, всё на уровне.
+        </p>
+      </div>
+
+      <!-- REVIEW 3 -->
+      <div class="review-card" data-aos="zoom-in">
+        <img src="/img/review2.jpg" alt="Фото модели" class="review-img">
+        <h3 class="review-name">Екатерина</h3>
+        <p class="review-text">
+          Классное место — уютно, современно, платят стабильно и можно развиваться.
+          За год вышла на хороший уровень дохода.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== INCOME CALCULATOR ===== -->
+<section class="calculator">
+  
+  <div class="calc-wrapper">
+  <div class="calculator-inner">
+    <h2 class="calc-title">КАЛЬКУЛЯТОР ДОХОДА</h2>
+    <div class="calc-box" data-aos="fade-up">
+      <div class="calc-group">
+        <h3 class="calc-label">Количество часов</h3>
+        <div class="calc-options" id="hours-options">
+          <button class="calc-btn" data-hours="6">6</button>
+          <button class="calc-btn" data-hours="7">7</button>
+          <button class="calc-btn" data-hours="8">8</button>
+        </div>
+      </div>
+
+      <div class="calc-group">
+        <h3 class="calc-label">Количество смен</h3>
+        <div class="calc-options" id="shifts-options">
+          <button class="calc-btn" data-shifts="4">4</button>
+          <button class="calc-btn" data-shifts="5">5</button>
+          <button class="calc-btn" data-shifts="6">6</button>
+        </div>
+      </div>
+
+      <div class="calc-result">
+        <div class="calc-sum" id="calc-sum">0 ₽</div>
+        <div class="calc-progress">
+          <div class="calc-progress-bar" id="calc-progress-bar"></div>
+        </div>
+        <p class="calc-desc" id="calc-desc">Выберите часы и смены</p>
+      </div>
+    </div>
+  </div>
+  <div class="afford-block" id="affordBlock" style="display:none;">
+  <h3 class="afford-title">Что ты сможешь себе позволить?</h3>
+  <ul id="affordList" class="afford-list"></ul>
+
+  <!-- Блок добавления своего товара -->
+  <div class="afford-custom">
+    <input id="customName" type="text" placeholder="Своя цель (например, PS5)">
+    <input id="customPrice" type="number" placeholder="Цена, ₽">
+    <button id="addCustomBtn">Добавить</button>
+  </div>
+</div>
+</div>
+</section>
+
+<section class="cta">
+  <div class="cta-inner">
+    <h2>ГОТОВА НАЧАТЬ?</h2>
+    <p>Заполни короткую анкету — и мы свяжемся с тобой сегодня</p>
+    <button class="cta-btn scroll-to-form">Заполнить анкету</button>
+  </div>
+</section>
+<footer class="footer">
+  <p>© PURE, 2025. Санкт-Петербург</p>
+</footer>
+<div class="alert" id="customAlert">
+  <div class="alert-box">
+    <p id="alertMessage">Сообщение</p>
+    <button id="alertOk">Ок</button>
+  </div>
+</div>
+
+<script>
+let products = [
+  { name: "AirPods", price: 19990 },
+  { name: "Новый iPhone", price: 109990 },
+  { name: "Аренда квартиры на месяц", price: 35000 }
+];
+
+const formEl = document.querySelector(".hero-form");
+const firstInput = formEl.querySelector("input");
+
+document.querySelectorAll(".scroll-to-form").forEach(btn => {
+  btn.addEventListener("click", () => {
+    formEl.scrollIntoView({ behavior: "smooth", block: "center" });
+
+    setTimeout(() => {
+      firstInput.focus();
+    }, 600);
+  });
+});
+
+// ===== CAROUSEL WITH DOTS =====
+const track = document.querySelector('.carousel-track');
+const items = document.querySelectorAll('.carousel-item');
+const dotsContainer = document.getElementById('carouselDots');
+
+let index = 0;
+
+// Создаём точки
+items.forEach((_, i) => {
+  const dot = document.createElement("div");
+  dot.classList.add("carousel-dot");
+  if (i === 0) dot.classList.add("active");
+
+  dot.addEventListener("click", () => {
+    index = i;
+    updateCarousel();
+  });
+
+  dotsContainer.appendChild(dot);
+});
+
+const dots = document.querySelectorAll(".carousel-dot");
+
+function updateCarousel() {
+  track.style.transform = `translateX(-${index * 100}%)`;
+
+  dots.forEach(d => d.classList.remove("active"));
+  dots[index].classList.add("active");
+}
+
+function autoSlide() {
+  index = (index + 1) % items.length;
+  updateCarousel();
+}
+
+// автопрокрутка каждые 4 секунды
+setInterval(autoSlide, 4000);
+
+
+// CALCULATOR
+const hourButtons = document.querySelectorAll('#hours-options .calc-btn');
+const shiftButtons = document.querySelectorAll('#shifts-options .calc-btn');
+const sumEl = document.getElementById('calc-sum');
+const descEl = document.getElementById('calc-desc');
+const progressBar = document.getElementById('calc-progress-bar');
+const affordBlock = document.getElementById("affordBlock");
+const affordList = document.getElementById("affordList");
+
+let selectedHours = null;
+let selectedShifts = null;
+let total = 0; // глобальная переменная
+
+function updateResult() {
+  if (selectedHours && selectedShifts) {
+    const basePerShift = 7000;
+    const hourFactor = selectedHours / 7;
+    const perShift = Math.round(basePerShift * hourFactor);
+    total = perShift * selectedShifts;
+
+    sumEl.textContent = total.toLocaleString('ru-RU') + ' ₽';
+    descEl.innerHTML = `Посчитано на основе реальной статистики доходов наших моделей за последний год`;
+
+    // обновляем прогресс-бар
+    const max = 100000; 
+    const progress = Math.min((total / max) * 100, 100);
+    progressBar.style.width = progress + '%';
+  } else {
+    total = 0;
+    sumEl.textContent = '0 ₽';
+    descEl.textContent = 'Выберите часы и смены';
+    progressBar.style.width = '0%';
+  }
+
+  // Блок "Что ты сможешь себе позволить"
+  if (total > 0) {
+    affordBlock.style.display = "block";
+    affordList.innerHTML = "";
+
+    products.forEach(product => {
+      const weeks = product.price / total;
+      const formattedWeeks = weeks.toFixed(1).replace('.', ',');
+
+      const li = document.createElement("li");
+      li.innerHTML = `<span>${product.name}</span><b>${formattedWeeks} недель</b>`;
+      affordList.appendChild(li);
+    });
+  } else {
+    affordBlock.style.display = "none";
+  }
+}
+
+// Кнопки часов
+hourButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    hourButtons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    selectedHours = parseInt(btn.dataset.hours);
+    updateResult();
+  });
+});
+
+// Кнопки смен
+shiftButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    shiftButtons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    selectedShifts = parseInt(btn.dataset.shifts);
+    updateResult();
+  });
+});
+
+// Добавление своего товара
+document.getElementById("addCustomBtn").addEventListener("click", () => {
+  const name = document.getElementById("customName").value.trim();
+  const price = Number(document.getElementById("customPrice").value);
+
+  if (!name || !price || price <= 0) {
+    alert("Введите корректные данные.");
+    return;
+  }
+
+  products.push({ name, price });
+  document.getElementById("customName").value = "";
+  document.getElementById("customPrice").value = "";
+
+  updateResult();
+});
+
+// BURGER MENU
+const burger = document.getElementById("burgerBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+burger.addEventListener("click", () => {
+  mobileMenu.classList.toggle("active");
+});
+
+function showAlert(message) {
+    const alertBox = document.getElementById("customAlert");
+    const alertMessage = document.getElementById("alertMessage");
+
+    alertMessage.textContent = message;
+    alertBox.style.display = "flex";
+
+    document.getElementById("alertOk").onclick = () => {
+        alertBox.style.display = "none";
+    };
+}
+</script>
+
+<script>
+const API_URL = "https://black-unit-9e7f.gastiplay.workers.dev/";
+
+document.getElementById("tgForm").addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const form = new FormData(this);
+
+    const body = {
+        name: form.get("name"),
+        age: form.get("age"),
+        contacts: form.get("contacts")
+    };
+
+    fetch(API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body)
+    })
+    .then(r => r.json())
+    .then(res => showAlert("Отправлено!"))
+    .catch(() => showAlert("Ошибка отправки"));
+});
+
+</script>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({ duration: 800, once: true });</script>
+</body>
+</html>
