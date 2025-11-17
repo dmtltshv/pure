@@ -77,6 +77,17 @@ a {
   pointer-events: none;
 }
 
+.header,
+.mobile-menu,
+.alert,
+.hero-form,
+.work-card {
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  will-change: backdrop-filter;
+}
+
+
 /* =========================================
    HEADER
 ========================================= */
