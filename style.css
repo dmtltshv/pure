@@ -76,12 +76,6 @@ a {
   pointer-events: none;
 }
 
-@supports (-webkit-touch-callout: none) {
-  .bg-fixed {
-    position: absolute;
-  }
-}
-
 /* =========================================
    HEADER
 ========================================= */
