@@ -178,3 +178,10 @@ function showAlert(message) {
     alertBox.style.display = "none";
   };
 }
+
+// Закрытие меню при клике по пункту
+document.querySelectorAll('.mobile-menu a').forEach(link => {
+  link.addEventListener('click', () => {
+    mobileMenu.classList.remove('active');
+  });
+});
