@@ -53,10 +53,12 @@ html { scroll-behavior: smooth; }
 body {
   font-family: 'Inter', sans-serif;
   color: var(--color-white);
-  background-image: url(/img/bg.png);
+  background: linear-gradient(
+    180deg,
+    #6A3B14 0%,
+    #7F4616 100%
+  );
   background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
 }
 
 button { font-family: 'Inter', sans-serif; }
