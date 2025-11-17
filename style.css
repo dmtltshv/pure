@@ -53,7 +53,7 @@ html { scroll-behavior: smooth; }
 body {
   font-family: 'Inter', sans-serif;
   color: var(--color-white);
-  background: url("/img/bg.webp");
+  background-color: #3F1E07;
 }
 
 button { font-family: 'Inter', sans-serif; }
