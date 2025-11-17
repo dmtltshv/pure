@@ -18,13 +18,14 @@ document.querySelectorAll(".scroll-to-form").forEach(btn => {
   });
 });
 
-document.querySelector(".scroll-to-jobs").addEventListener("click", () => {
-  document.getElementById("jobs").scrollIntoView({
-    behavior: "smooth",
-    block: "start"
-  });
+document.querySelectorAll(".scroll-to-jobs").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.getElementById("jobs").scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
 });
-
+});
 
 // ===== CAROUSEL WITH DOTS =====
 const track = document.querySelector('.carousel-track');
