@@ -42,33 +42,12 @@
 /* =========================================
    GLOBAL
 ========================================= */
-html { 
-  scroll-behavior: smooth; 
-  scrollbar-width: thin;
-  scrollbar-color: var(--color-accent) var(--color-accent-light);}
+html { scroll-behavior: smooth; }
 
 * { 
   margin: 0; 
   padding: 0; 
   box-sizing: border-box; 
-}
-
-/* WebKit browsers (Chrome, Edge, Safari) */
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--color-accent-light); 
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--color-accent); 
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-accent-hover); 
 }
 
 body {
