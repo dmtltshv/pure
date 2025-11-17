@@ -68,6 +68,7 @@ body::before {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  pointer-events: none;
 }
 
 
