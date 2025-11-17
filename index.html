@@ -22,9 +22,10 @@
 </head>
 
 <body>
+<div class="bg-fixed"></div>
 <header class="header">
     <div class="nav-left">
-        <a class="nav-btn scroll-to-job" href="#jobs">Вакансии</a>
+        <a class="nav-btn scroll-to-jobs" href="#jobs">Вакансии</a>
     </div>
 
     <div class="logo">P U R E</div>
@@ -41,7 +42,7 @@
 
     <!-- MOBILE -->
     <div class="mobile-menu" id="mobileMenu">
-        <a class="nav-btn scroll-to-job" href="#jobs">Вакансии</a>
+        <a class="nav-btn scroll-to-jobs" href="#jobs">Вакансии</a>
         <a class="nav-btn scroll-to-form" href="#form">Заполнить анкету</a>
         <a class="btn-telegram" href="https://t.me/purestudi0" target="_blank">Telegram</a>
     </div>
@@ -268,9 +269,12 @@
   </div>
 </div>
 
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 800, once: true });
+</script>
+
 <script src="script.js"></script>
 <script src="request.js"></script>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>AOS.init({ duration: 800, once: true });</script>
 </body>
 </html>

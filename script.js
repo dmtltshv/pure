@@ -166,6 +166,12 @@ burger.addEventListener("click", () => {
   mobileMenu.classList.toggle("active");
 });
 
+document.querySelectorAll('.mobile-menu a').forEach(link => {
+  link.addEventListener('click', () => {
+    mobileMenu.classList.remove('active');
+  });
+});
+
 // Custom alert
 function showAlert(message) {
   const alertBox = document.getElementById("customAlert");
