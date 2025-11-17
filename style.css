@@ -53,6 +53,7 @@ html { scroll-behavior: smooth; }
 body {
   font-family: 'Inter', sans-serif;
   color: var(--color-white);
+  background-color: #000;
 }
 
 button { font-family: 'Inter', sans-serif; }
