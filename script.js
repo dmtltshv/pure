@@ -170,6 +170,7 @@ burger.addEventListener("click", () => {
 document.querySelectorAll('.mobile-menu a').forEach(link => {
   link.addEventListener('click', () => {
     mobileMenu.classList.remove('active');
+    burger.classList.remove('active');
   });
 });
 
