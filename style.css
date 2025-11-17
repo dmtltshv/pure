@@ -328,7 +328,7 @@ input {
 @media (max-width: 600px) {
   .hero-title { font-size: 36px; }
   .hero-form { max-width: 330px; padding: 26px; }
-  input { font-size: 15px; }
+  input { font-size: 16px; }
   .btn-submit { font-size: 15px; }
 }
 
@@ -803,7 +803,7 @@ input {
   flex: 1;
   min-width: 140px;
   padding: 10px;
-  font-size: 15px;
+  font-size: 16px;
   border-radius: var(--radius-10);
   border: 1px solid #ddd;
 }
