@@ -53,13 +53,7 @@ html { scroll-behavior: smooth; }
 body {
   font-family: 'Inter', sans-serif;
   color: var(--color-white);
-
-  background-color: #000; /* как у тебя уже стоит */
-  background-image: url('/img/bg.webp');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed; /* можно оставить */
+  background-color: #000;
 }
 
 button { font-family: 'Inter', sans-serif; }
@@ -70,7 +64,19 @@ a {
   font-family: 'Inter', sans-serif; 
 }
 
-
+.bg-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  background: url("/img/bg.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  pointer-events: none;
+}
 
 /* =========================================
    HEADER
