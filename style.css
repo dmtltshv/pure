@@ -788,6 +788,7 @@ input {
 
 /* Afford block */
 .afford-block {
+  margin-top: 20px;
   padding: 20px;
   max-width: 460px;
   width: 100%;
