@@ -53,12 +53,10 @@ html { scroll-behavior: smooth; }
 body {
   font-family: 'Inter', sans-serif;
   color: var(--color-white);
-  background: linear-gradient(
-    180deg,
-    #6A3B14 0%,
-    #7F4616 100%
-  );
+  background: url("/img/bg.webp");
   background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 button { font-family: 'Inter', sans-serif; }
