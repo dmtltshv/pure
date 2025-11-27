@@ -3,17 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Вебкам студия PURE в Санкт-Петербурге — работа моделям, высокие выплаты</title>
+  <title>PURE — студия в Санкт-Петербурге, где тебя поддерживают и ценят</title>
 
-  <meta name="description" content="Работа в вебкам студии PURE в центре Санкт-Петербурга. Высокие выплаты, комфортные комнаты, ежедневные выплаты, обучение и поддержка. Принимаем девушек и парней от 18 лет.">
+  <meta name="description" content="Тёплая студия PURE в центре Санкт-Петербурга. Комфортные комнаты, поддержка с первого дня, гибкий график и стабильный доход. Спокойная атмосфера, бережное отношение и конфиденциальность.">
+  <meta name="keywords" content="студия PURE, работа моделью СПБ, комфортная студия, работа в центре Санкт-Петербурга, гибкий график, анонимность">
 
-  <meta name="keywords" content="вебкам студия СПб, работа вебкам Санкт-Петербург, работа модель вебкам, вебкам работа для девушек, вебкам работа для парней, студия вебкам СПБ центр">
-
-  <meta property="og:title" content="Вебкам студия PURE в Санкт-Петербурге">
-  <meta property="og:description" content="Работа веб-моделью в центре СПБ. Высокий доход, комфортные условия, ежедневные выплаты.">
+  <meta property="og:title" content="PURE — студия в центре Санкт-Петербурга">
+  <meta property="og:description" content="Место, где тебе спокойно, комфортно и безопасно зарабатывать.">
   <meta property="og:image" content="/img/interior1.webp">
   <meta property="og:type" content="website">
-  
+
   <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.ico">
   <link rel="icon" type="image/png" sizes="64x64" href="/img/favicon-64x64.ico">
@@ -28,238 +27,382 @@
 
 <body>
 <div class="bg-fixed"></div>
+
 <header class="header">
-    <div class="nav-left">
-        <a class="nav-btn scroll-to-jobs">Вакансии</a>
-    </div>
+  <div class="nav-left">
+    <a class="nav-btn scroll-to-jobs">Вакансии</a>
+  </div>
 
-    <div class="logo">P U R E</div>
+  <div class="logo">P U R E</div>
 
-    <div class="nav-right">
-        <a class="nav-btn scroll-to-form">Заполнить анкету</a>
-        <a class="btn-telegram" href="https://t.me/purestudi0" target="_blank">Telegram</a>
-    </div>
+  <div class="nav-right">
+    <a class="nav-btn scroll-to-form">Заполнить анкету</a>
+    <a class="btn-telegram" href="https://t.me/purestudi0" target="_blank">Telegram</a>
+  </div>
 
-    <!-- BURGER -->
-    <button class="burger" id="burgerBtn">
-        <span></span><span></span><span></span>
-    </button>
+  <!-- BURGER -->
+  <button class="burger" id="burgerBtn">
+    <span></span><span></span><span></span>
+  </button>
 
-    <!-- MOBILE -->
-    <div class="mobile-menu" id="mobileMenu">
-        <a class="nav-btn scroll-to-jobs">Вакансии</a>
-        <a class="nav-btn scroll-to-form">Заполнить анкету</a>
-        <a class="btn-telegram" href="https://t.me/purestudi0" target="_blank">Telegram</a>
-    </div>
+  <!-- MOBILE -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a class="nav-btn scroll-to-jobs">Вакансии</a>
+    <a class="nav-btn scroll-to-form">Заполнить анкету</a>
+    <a class="btn-telegram" href="https://t.me/purestudi0" target="_blank">Telegram</a>
+  </div>
 </header>
 
+<!-- ================= Главная ================= -->
 <section class="hero">
   <div class="hero-inner">
     <div class="left">
-      <h1 class="hero-title">РАБОТА<br>В ВЕБКАМ СТУДИИ<br>В ЦЕНТРЕ СПБ</h1>
+      <h1 class="hero-title">МЕСТО, ГДЕ<br>ТЕБЯ ЦЕНЯТ<br>И ПОДДЕРЖИВАЮТ</h1>
       <ul class="hero-list">
-        <li>Комфортные условия</li>
-        <li>Офис в самом центре Санкт-Петербурга</li>
-        <li>Уютный интерьер</li>
-        <li>Гарантированно высокий доход</li>
-        <li>Принимаем и парней и девушек</li>
+        <li>Уютные стильные комнаты, в которых приятно работать</li>
+        <li>Центр Санкт-Петербурга — безопасно и удобно</li>
+        <li>Тёплая дружелюбная команда</li>
+        <li>Доход, который реально меняет жизнь</li>
+        <li>Принимаем девушек и парней — важны желание и уверенность</li>
       </ul>
     </div>
 
-   <form class="hero-form" id="tgForm">
-      <h3 class="form-title">Запишись на собеседование</h3>
+    <form class="hero-form scroll-target-form" id="tgForm">
+      <h3 class="form-title">Стать моделью легко — просто оставь контакт</h3>
 
       <input type="text" name="name" placeholder="Имя" required>
       <input type="text" name="age" placeholder="Возраст" required>
       <input type="text" name="contacts" placeholder="Telegram или телефон" required>
-      <button type="submit" class="btn-submit">Записаться на собеседование</button>
+      <button type="submit" class="btn-submit">Стать моделью</button>
       <p class="form-status" id="formStatus" style="display:none;"></p>
-  </form>
+    </form>
   </div>
 </section>
 
-<!-- ===== WORK ===== -->
-<section class="work">
-  <div class="work-inner">
-    <h2 class="work-title">РАБОТА В PURE</h2>
+<!-- ================= 1. ТВОЙ ДОХОД ================= -->
+<section class="calculator" id="income">
+  <div class="calc-wrapper">
+    <div>
+    <h2 class="calc-title">Твой доход в PURE</h2>
+    <p class="calc-intro">
+      Ниже — пример, как может выглядеть твой доход при разных часах и количестве смен. 
+      Это ориентировочная сумма на основе реальной статистики наших моделей.
+    </p>
+    </div>
 
-    <div class="work-grid">
-      <div class="work-card" data-aos="fade-up">
-        <h3>Средний заработок моделей</h3>
-        <p>От 80 000 ₽ в месяц. Но есть и те кто зарабатывает до 150 000 ₽ в неделю.</p>
+    <div class="calculator-inner">
+      <div class="calc-box" data-aos="fade-up">
+        <div class="calc-group">
+          <h3 class="calc-label">Количество часов в неделю</h3>
+          <div class="calc-options" id="hours-options">
+            <button class="calc-btn" data-hours="6">6</button>
+            <button class="calc-btn" data-hours="7">7</button>
+            <button class="calc-btn" data-hours="8">8</button>
+          </div>
+        </div>
+
+        <div class="calc-group">
+          <h3 class="calc-label">Количество смен в неделю</h3>
+          <div class="calc-options" id="shifts-options">
+            <button class="calc-btn" data-shifts="4">4</button>
+            <button class="calc-btn" data-shifts="5">5</button>
+            <button class="calc-btn" data-shifts="6">6</button>
+          </div>
+        </div>
+
+        <div class="calc-result">
+          <div class="calc-sum" id="calc-sum">0 ₽</div>
+          <div class="calc-progress">
+            <div class="calc-progress-bar" id="calc-progress-bar"></div>
+          </div>
+          <p class="calc-desc" id="calc-desc">
+            Посчитано на основе реальной статистики доходов наших моделей за последний год
+          </p>
+          <p class="calc-period">Это ориентировочный доход за месяц</p>
+        </div>
       </div>
 
-      <div class="work-card" data-aos="fade-up">
-        <h3>Регулярные выплаты ЗП</h3>
-        <p>Стабильно платим заработную плату 1 раз в 2 недели по актуальному курсу.</p>
-      </div>
+      <div class="afford-block" id="affordBlock" style="display:none;">
+        <h3 class="afford-title">Что ты сможешь себе позволить на этот доход?</h3>
+        <ul id="affordList" class="afford-list"></ul>
 
-      <div class="work-card" data-aos="fade-up">
-        <h3>Растущий процент выплат</h3>
-        <p>Прозрачная система дохода и лёгкие условия для высокого % — это про нас.</p>
-      </div>
-
-      <div class="work-card" data-aos="fade-up">
-        <h3>Ежедневные выплаты</h3>
-        <p>Для новых моделей первые 5 смен мы оплачиваем день в день.</p>
-      </div>
-
-      <div class="work-card" data-aos="fade-up">
-        <h3>Бонус “приведи друга”</h3>
-        <p>Платим 15 000 ₽ за модель.</p>
-      </div>
-
-      <div class="work-card" data-aos="fade-up">
-        <h3>Постоянное развитие</h3>
-        <p>Фотосеты, посты, развитие аккаунтов — делает администратор.</p>
+        <div class="afford-custom">
+          <input id="customName" type="text" placeholder="Своя цель (например, новая камера)">
+          <input id="customPrice" type="number" placeholder="Цена, ₽">
+          <button id="addCustomBtn">Добавить</button>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== INTERIOR ===== -->
+<!-- ================= 2. ГДЕ ТЫ БУДЕШЬ РАБОТАТЬ ================= -->
 <section class="interior">
   <div class="interior-inner">
-    <h2 class="interior-title">НАШ ИНТЕРЬЕР</h2>
-    <p class="interior-sub">Комфортные, чистые и современные интерьеры в которых работают наши модели.</p>
+    <h2 class="interior-title">Пространство, где ты будешь работать</h2>
+    <p class="interior-sub">
+      Мягкий свет, тёплые оттенки, аккуратный интерьер и ощущение уюта — 
+      всё это помогает чувствовать себя спокойнее и увереннее перед камерой.
+    </p>
 
     <div class="carousel-wrapper" data-aos="fade-up">
       <div class="carousel-track">
-        <img src="/img/interior1.webp" class="carousel-item">
-        <img src="/img/interior2.webp" class="carousel-item">
-        <img src="/img/interior3.webp" class="carousel-item">
-        <img src="/img/interior4.webp" class="carousel-item">
+        <img src="/img/interior1.webp" class="carousel-item" alt="Интерьер студии PURE">
+        <img src="/img/interior2.webp" class="carousel-item" alt="Интерьер студии PURE">
+        <img src="/img/interior3.webp" class="carousel-item" alt="Интерьер студии PURE">
+        <img src="/img/interior4.webp" class="carousel-item" alt="Интерьер студии PURE">
       </div>
     </div>
     <div class="carousel-dots" id="carouselDots"></div>
   </div>
 </section>
 
-<!-- ===== JOBS ===== -->
-<section class="jobs" id="jobs">
-  <div class="jobs-inner">
-    <h2 class="jobs-title">НАШИ ВАКАНСИИ</h2>
+<!-- ================= 3. КАК МЫ ПОМОЖЕМ ТЕБЕ ================= -->
+<section class="work" id="support">
+  <div class="work-inner">
+    <h2 class="work-title">Поддержка, которую ты получаешь с первого дня</h2>
 
-    <div class="jobs-grid">
-      <!-- CARD 1 -->
-      <div class="job-card" data-aos="fade-up">
-        <img src="/img/model-male.webp" alt="Модель парень" class="job-img">
-        <h3 class="job-role">Веб - Модель<br><span>Парень</span></h3>
-        <ul class="job-reqs">
-          <li>18 лет</li>
-          <li>Опрятный внешний вид</li>
-          <li>Желание работать и зарабатывать</li>
-        </ul>
-        <button class="job-btn scroll-to-form">Записаться на собеседование</button>
+    <div class="work-grid" data-aos="fade-up">
+      <div class="work-card">
+        <h3>Индивидуальное обучение</h3>
+        <p>Мы объясняем, что работает именно для тебя: подача, общение, уверенность в кадре.</p>
       </div>
 
-      <!-- CARD 2 -->
-      <div class="job-card" data-aos="fade-up">
-        <img src="/img/model-female.webp" alt="Модель девушка" class="job-img">
-        <h3 class="job-role">Веб - Модель<br><span>Девушка</span></h3>
-        <ul class="job-reqs">
-          <li>18 лет</li>
-          <li>Опрятный внешний вид</li>
-          <li>Желание работать и зарабатывать</li>
-        </ul>
-        <button class="job-btn scroll-to-form">Записаться на собеседование</button>
+      <div class="work-card">
+        <h3>Помощь с образом и стилем</h3>
+        <p>Администраторы помогают подобрать стиль, внешний вид и подачу, чтобы образ был цельным.</p>
+      </div>
+
+      <div class="work-card">
+        <h3>Первые смены с поддержкой</h3>
+        <p>Ты не остаёшься один(а) — первые смены проходят вместе с администратором, который подсказывает и помогает.</p>
+      </div>
+
+      <div class="work-card">
+        <h3>Развитие аккаунтов</h3>
+        <p>Фотосеты, оформление профиля и рекомендации по продвижению — этим занимаемся мы.</p>
+      </div>
+
+      <div class="work-card">
+        <h3>Рост дохода</h3>
+        <p>Чем дольше ты работаешь и увереннее себя чувствуешь, тем выше твой доход и процент.</p>
+      </div>
+
+      <div class="work-card">
+        <h3>Бережное отношение</h3>
+        <p>Мы не давим и не торопим — всё в твоём темпе. Важно, чтобы тебе было комфортно.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== REVIEWS ===== -->
-<section class="reviews">
-  <div class="reviews-inner">
-    <h2 class="reviews-title">ОТЗЫВЫ НАШИХ МОДЕЛЕЙ</h2>
-    <p class="reviews-sub">Мы ценим комфорт, поддержку и развитие каждого, кто работает в PURE</p>
+<!-- ================= 4. ТВОЁ РАБОЧЕЕ МЕСТО ================= -->
+<section class="workspace">
+  <div class="workspace-inner">
 
-    <div class="reviews-grid">
-      <!-- REVIEW 1 -->
-      <div class="review-card" data-aos="zoom-in">
-        <img src="/img/review1.webp" alt="Фото модели" class="review-img">
+    <!-- LEFT: TEXT + CARDS -->
+    <div class="workspace-left">
+      <h2 class="workspace-title">Твоё рабочее место</h2>
+      <p class="workspace-sub">
+        Это комфортное современное пространство, где тебе легко работать и чувствовать себя уверенно.
+      </p>
+
+      <div class="workspace-cards">
+
+        <div class="workspace-card">
+          <h3>Профессиональное освещение</h3>
+          <p>Мягкий свет подчёркивает внешность и создаёт премиальную картинку.</p>
+        </div>
+
+        <div class="workspace-card">
+          <h3>Full HD камеры</h3>
+          <p>Современные камеры дают чистое и красивое изображение без задержек.</p>
+        </div>
+
+        <div class="workspace-card">
+          <h3>Комфорт и уют</h3>
+          <p>Уютная мебель, аккуратные детали интерьера — чтобы ты чувствовал(а) себя спокойно.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- RIGHT: IMAGE -->
+    <div class="workspace-right">
+      <img src="img/workspace.png" alt="workspace icon">
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= 5. ТВОИ КОЛЛЕГИ И АТМОСФЕРА ================= -->
+<section class="reviews" id="team">
+  <div class="reviews-inner">
+    <h2 class="reviews-title">Люди и атмосфера вокруг тебя</h2>
+    <p class="reviews-sub">
+      В PURE ценят уважение и поддержку. Здесь нет соревнования и давления — только команда, которая помогает друг другу.
+    </p>
+
+    <div class="reviews-grid" data-aos="zoom-in">
+      <div class="review-card">
+        <img src="/img/review1.png" alt="Фото модели" class="review-img">
         <h3 class="review-name">Анна</h3>
         <p class="review-text">
-          Работаю здесь уже полгода — отличная атмосфера, классная команда и реально высокий доход.
-          Всё прозрачно, никаких сюрпризов.
+          Работаю здесь уже полгода — уютная атмосфера, дружелюбная команда и стабильный доход. Всё прозрачно и спокойно.
         </p>
       </div>
 
-      <!-- REVIEW 2 -->
-      <div class="review-card" data-aos="zoom-in">
-        <img src="/img/review3.webp" alt="Фото модели" class="review-img">
+      <div class="review-card">
+        <img src="/img/review3.png" alt="Фото модели" class="review-img">
         <h3 class="review-name">Максим</h3>
         <p class="review-text">
-          Никогда не думал, что это может быть так интересно!  
-          Руководство помогает, дают советы, обучают, всё на уровне.
+          Оказалось намного интереснее, чем я ожидал. Хорошая поддержка, обучение и ощущение, что ты здесь важен.
         </p>
       </div>
 
-      <!-- REVIEW 3 -->
-      <div class="review-card" data-aos="zoom-in">
-        <img src="/img/review2.webp" alt="Фото модели" class="review-img">
+      <div class="review-card">
+        <img src="/img/review2.png" alt="Фото модели" class="review-img">
         <h3 class="review-name">Екатерина</h3>
         <p class="review-text">
-          Классное место — уютно, современно, платят стабильно и можно развиваться.
-          За год вышла на хороший уровень дохода.
+          Студия современная, уютная. За год вышла на хороший заработок и чувствую себя уверенно.
         </p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== CALCULATOR ===== -->
-<section class="calculator">
-  
-  <div class="calc-wrapper">
-    <h2 class="calc-title">КАЛЬКУЛЯТОР ДОХОДА</h2>
-  <div class="calculator-inner">
-    <div class="calc-box" data-aos="fade-up">
-      <div class="calc-group">
-        <h3 class="calc-label">Количество часов</h3>
-        <div class="calc-options" id="hours-options">
-          <button class="calc-btn" data-hours="6">6</button>
-          <button class="calc-btn" data-hours="7">7</button>
-          <button class="calc-btn" data-hours="8">8</button>
+<!-- ================= 6. ТВОЙ ГРАФИК ================= -->
+<section class="schedule" id="schedule">
+    <div class="container">
+        <div class="schedule-inner">
+
+            <!-- ЛЕВАЯ КОЛОНКА — КАРТИНКА -->
+            <div class="schedule-image">
+                <img src="img/schedule.png" alt="Твой график">
+            </div>
+
+            <!-- ПРАВАЯ КОЛОНКА — КОНТЕНТ -->
+            <div class="schedule-content">
+                <h2>Твой график в PURE</h2>
+                <p class="schedule-subtitle">
+                    Мы подбираем расписание под твой ритм жизни — учёбу, работу, личные дела.
+                    Можно начать с комфортного количества смен и постепенно увеличивать нагрузку.
+                </p>
+
+                <div class="schedule-grid">
+                    <div class="schedule-card">
+                        <h3>Гибкий формат</h3>
+                        <p>Можно выбирать удобные дни и время. График обсуждается заранее и корректируется при необходимости.</p>
+                    </div>
+
+                    <div class="schedule-card">
+                        <h3>Стабильность</h3>
+                        <p>Чтобы доход был предсказуемым, мы помогаем подобрать оптимальное количество смен в неделю.</p>
+                    </div>
+
+                    <div class="schedule-card">
+                        <h3>Баланс</h3>
+                        <p>Важно, чтобы у тебя оставались силы на себя, отдых и личную жизнь. Мы это учитываем.</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
+    </div>
+</section>
+
+<!-- ================= 7. ТВОЯ ЗАЩИТА ================= -->
+<section class="safety" id="safety">
+  <div class="safety-inner" data-aos="fade-up">
+    <h2 class="safety-title">Твоя защита</h2>
+    <p class="safety-sub">
+      Мы серьёзно относимся к безопасности и личным границам. 
+      Наша задача — создать для тебя спокойные и защищённые условия.
+    </p>
+
+    <ul class="safety-list">
+      <li>Закрытые комнаты — в доступе только ты и администратор.</li>
+      <li>Конфиденциальность: личные данные не передаются третьим лицам.</li>
+      <li>Помощь в сложных ситуациях — мы не оставим тебя один на один с вопросами.</li>
+      <li>Бережное отношение к твоим границам и решениям.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= 8. КАК ПОПАСТЬ В СТУДИЮ ================= -->
+<section class="steps" id="steps">
+  <div class="steps-inner">
+    <h2 class="steps-title">Как попасть в студию PURE</h2>
+    <p class="steps-sub">
+      Всё просто и спокойно. Никаких сложных этапов — только понятные шаги.
+    </p>
+
+    <div class="steps-grid"  data-aos="fade-up">
+      <div class="step-card">
+        <span class="step-number">1</span>
+        <h3>Оставь контакт</h3>
+        <p>Заполни короткую анкету на сайте — имя, возраст и удобный способ связи.</p>
       </div>
 
-      <div class="calc-group">
-        <h3 class="calc-label">Количество смен</h3>
-        <div class="calc-options" id="shifts-options">
-          <button class="calc-btn" data-shifts="4">4</button>
-          <button class="calc-btn" data-shifts="5">5</button>
-          <button class="calc-btn" data-shifts="6">6</button>
-        </div>
+      <div class="step-card">
+        <span class="step-number">2</span>
+        <h3>Спокойный созвон</h3>
+        <p>Мы напишем или позвоним, ответим на вопросы и обсудим формат работы.</p>
       </div>
 
-      <div class="calc-result">
-        <div class="calc-sum" id="calc-sum">0 ₽</div>
-        <div class="calc-progress">
-          <div class="calc-progress-bar" id="calc-progress-bar"></div>
-        </div>
-        <p class="calc-desc" id="calc-desc">Выберите часы и смены</p>
+      <div class="step-card">
+        <span class="step-number">3</span>
+        <h3>Знакомство в студии</h3>
+        <p>Ты приедешь в студию, увидишь комнаты, познакомишься с командой и всё обсудишь лично.</p>
+      </div>
+
+      <div class="step-card">
+        <span class="step-number">4</span>
+        <h3>Первые смены</h3>
+        <p>Мы поможем подготовиться, обучим и поддержим на старте. Дальше ты постепенно входишь в комфортный ритм.</p>
       </div>
     </div>
 
-    <div class="afford-block" id="affordBlock" style="display:none;">
-  <h3 class="afford-title">Что ты сможешь себе позволить?</h3>
-  <ul id="affordList" class="afford-list"></ul>
-
-  <div class="afford-custom">
-    <input id="customName" type="text" placeholder="Своя цель (например, PS5)">
-    <input id="customPrice" type="number" placeholder="Цена, ₽">
-    <button id="addCustomBtn">Добавить</button>
+    <button class="cta-btn scroll-to-form" style="margin-top:32px;">Заполнить анкету</button>
   </div>
-  </div>
-</div>
-</div>
 </section>
 
+<!-- ================= 9. ВАКАНСИИ ================= -->
+<section class="jobs" id="jobs">
+  <div class="jobs-inner">
+    <h2 class="jobs-title">Вакансии</h2>
+
+    <div class="jobs-grid"  data-aos="fade-up">
+      <div class="job-card">
+        <img src="/img/model-male.png" alt="Модель парень" class="job-img">
+        <h3 class="job-role">Модель<br><span>Парень</span></h3>
+        <ul class="job-reqs">
+          <li>18 лет и старше</li>
+          <li>Приятный внешний вид</li>
+          <li>Желание зарабатывать и развиваться</li>
+        </ul>
+        <button class="job-btn scroll-to-form">Стать моделью</button>
+      </div>
+
+      <div class="job-card">
+        <img src="/img/model-female.png" alt="Модель девушка" class="job-img">
+        <h3 class="job-role">Модель<br><span>Девушка</span></h3>
+        <ul class="job-reqs">
+          <li>18 лет и старше</li>
+          <li>Приятный внешний вид</li>
+          <li>Желание зарабатывать и развиваться</li>
+        </ul>
+        <button class="job-btn scroll-to-form">Стать моделью</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
 <section class="cta">
   <div class="cta-inner">
-    <h2>ГОТОВ НАЧАТЬ?</h2>
-    <p>Заполни короткую анкету — и мы свяжемся с тобой сегодня</p>
+    <h2>Готов(а) сделать первый шаг?</h2>
+    <p>Заполни короткую анкету — и мы аккуратно проведём тебя через первые шаги в студии.</p>
     <button class="cta-btn scroll-to-form">Заполнить анкету</button>
   </div>
 </section>
@@ -268,6 +411,7 @@
   <p>© PURE, 2025. Санкт-Петербург</p>
 </footer>
 
+<!-- Alert -->
 <div class="alert" id="customAlert">
   <div class="alert-box">
     <p id="alertMessage">Сообщение</p>

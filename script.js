@@ -86,12 +86,13 @@ function updateResult() {
     const basePerShift = 7000;
     const hourFactor = selectedHours / 7;
     const perShift = Math.round(basePerShift * hourFactor);
-    total = perShift * selectedShifts;
+
+    total = perShift * selectedShifts * 4;
 
     sumEl.textContent = total.toLocaleString('ru-RU') + ' ₽';
     descEl.innerHTML = `Посчитано на основе реальной статистики доходов наших моделей за последний год`;
 
-    const max = 100000;
+    const max = 200000;
     const progress = Math.min((total / max) * 100, 100);
     progressBar.style.width = progress + '%';
   } else {
