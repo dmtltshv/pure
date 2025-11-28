@@ -10,7 +10,7 @@
 
   <meta property="og:title" content="PURE — студия в центре Санкт-Петербурга">
   <meta property="og:description" content="Место, где тебе спокойно, комфортно и безопасно зарабатывать.">
-  <meta property="og:image" content="/img/interior1.webp">
+  <meta property="og:image" content="/img/logo.png">
   <meta property="og:type" content="website">
 
   <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.ico">
@@ -26,18 +26,37 @@
 </head>
 
 <body>
+  <!-- Schema.org — PURE Organization + LocalBusiness -->
+<div itemscope itemtype="https://schema.org/LocalBusiness" style="display:none;">
+  <meta itemprop="name" content="Студия PURE">
+  <meta itemprop="description" content="Комфортная студия в центре Санкт-Петербурга — работа моделью, уютная атмосфера, поддержка и современное пространство.">
+  <meta itemprop="image" content="https://pure-site.ru/img/logo.png">
+  <meta itemprop="address" content="Санкт-Петербург, Россия">
+  <meta itemprop="areaServed" content="Санкт-Петербург">
+  <meta itemprop="url" content="https://pure-site.ru">
+  <meta itemprop="email" content="info@pure-site.ru">
+  <meta itemprop="sameAs" content="https://t.me/purestudi0">
+</div>
+
+<!-- Schema.org — WebSite -->
+<div itemscope itemtype="https://schema.org/WebSite" style="display:none;">
+  <meta itemprop="name" content="PURE — студия в Санкт-Петербурге">
+  <meta itemprop="url" content="https://pure-site.ru">
+  <meta itemprop="potentialAction" content="Заполнить анкету">
+</div>
+
 <div class="bg-fixed"></div>
 
 <header class="header">
   <div class="nav-left">
-    <a class="nav-btn scroll-to-jobs">Вакансии</a>
+    <a class="nav-btn scroll-to-jobs" aria-label="Перейти к вакансиям студии PURE">Вакансии</a>
   </div>
 
   <div class="logo">P U R E</div>
 
   <div class="nav-right">
-    <a class="nav-btn scroll-to-form">Заполнить анкету</a>
-    <a class="btn-telegram" href="https://t.me/purestudi0" target="_blank">Telegram</a>
+    <a class="nav-btn scroll-to-form" aria-label="Открыть форму для подачи анкеты в студию PURE">Заполнить анкету</a>
+    <a class="btn-telegram" href="https://t.me/purestudi0" target="_blank" aria-label="Открыть Telegram студии PURE">Telegram</a>
   </div>
 
   <!-- BURGER -->
@@ -47,9 +66,9 @@
 
   <!-- MOBILE -->
   <div class="mobile-menu" id="mobileMenu">
-    <a class="nav-btn scroll-to-jobs">Вакансии</a>
-    <a class="nav-btn scroll-to-form">Заполнить анкету</a>
-    <a class="btn-telegram" href="https://t.me/purestudi0" target="_blank">Telegram</a>
+    <a class="nav-btn scroll-to-jobs" aria-label="Перейти к вакансиям студии PURE">Вакансии</a>
+    <a class="nav-btn scroll-to-form" aria-label="Открыть форму для подачи анкеты в студию PURE">Заполнить анкету</a>
+    <a class="btn-telegram" href="https://t.me/purestudi0" target="_blank" aria-label="Открыть Telegram студии PURE">Telegram</a>
   </div>
 </header>
 
@@ -73,7 +92,7 @@
       <input type="text" name="name" placeholder="Имя" required>
       <input type="text" name="age" placeholder="Возраст" required>
       <input type="text" name="contacts" placeholder="Telegram или телефон" required>
-      <button type="submit" class="btn-submit">Стать моделью</button>
+      <button type="submit" class="btn-submit" aria-label="Отправить анкету для поступления в студию PURE">Стать моделью</button>
       <p class="form-status" id="formStatus" style="display:none;"></p>
     </form>
   </div>
@@ -82,59 +101,68 @@
 <!-- ================= 1. ТВОЙ ДОХОД ================= -->
 <section class="calculator" id="income">
   <div class="calc-wrapper">
+
     <div>
-    <h2 class="calc-title">Твой доход в PURE</h2>
-    <p class="calc-intro">
-      Ниже — пример, как может выглядеть твой доход при разных часах и количестве смен. 
-      Это ориентировочная сумма на основе реальной статистики наших моделей.
-    </p>
+      <h2 class="calc-title">Твой доход в PURE</h2>
+      <p class="calc-intro">
+        Ниже — пример, как может выглядеть твой доход при разных часах и количестве смен. 
+        Это ориентировочная сумма на основе реальной статистики наших моделей.
+      </p>
     </div>
 
-    <div class="calculator-inner">
-      <div class="calc-box" data-aos="fade-up">
-        <div class="calc-group">
-          <h3 class="calc-label">Количество часов в неделю</h3>
-          <div class="calc-options" id="hours-options">
-            <button class="calc-btn" data-hours="6">6</button>
-            <button class="calc-btn" data-hours="7">7</button>
-            <button class="calc-btn" data-hours="8">8</button>
-          </div>
-        </div>
+    <!-- ВАЖНО: calc-row ВЫШЕ! -->
+    <div class="calc-row">
 
-        <div class="calc-group">
-          <h3 class="calc-label">Количество смен в неделю</h3>
-          <div class="calc-options" id="shifts-options">
-            <button class="calc-btn" data-shifts="4">4</button>
-            <button class="calc-btn" data-shifts="5">5</button>
-            <button class="calc-btn" data-shifts="6">6</button>
+      <div class="calculator-inner">
+        <div class="calc-box" data-aos="fade-up">
+          <div class="calc-group">
+            <h3 class="calc-label">Количество часов в неделю</h3>
+            <div class="calc-options" id="hours-options">
+              <button class="calc-btn" data-hours="6" aria-label="Выбрать 6 часов работы в неделю">6</button>
+              <button class="calc-btn" data-hours="7" aria-label="Выбрать 7 часов работы в неделю">7</button>
+              <button class="calc-btn" data-hours="8" aria-label="Выбрать 8 часов работы в неделю">8</button>
+            </div>
           </div>
-        </div>
 
-        <div class="calc-result">
-          <div class="calc-sum" id="calc-sum">0 ₽</div>
-          <div class="calc-progress">
-            <div class="calc-progress-bar" id="calc-progress-bar"></div>
+          <div class="calc-group">
+            <h3 class="calc-label">Количество смен в неделю</h3>
+            <div class="calc-options" id="shifts-options">
+              <button class="calc-btn" data-shifts="4" aria-label="Выбрать 4 смены в неделю">4</button>
+              <button class="calc-btn" data-shifts="5" aria-label="Выбрать 5 смен в неделю">5</button>
+              <button class="calc-btn" data-shifts="6" aria-label="Выбрать 6 смен в неделю">6</button>
+            </div>
           </div>
-          <p class="calc-desc" id="calc-desc">
-            Посчитано на основе реальной статистики доходов наших моделей за последний год
-          </p>
-          <p class="calc-period">Это ориентировочный доход за месяц</p>
+
+          <div class="calc-result">
+            <div class="calc-sum" id="calc-sum">0 ₽</div>
+            <div class="calc-progress">
+              <div class="calc-progress-bar" id="calc-progress-bar"></div>
+            </div>
+            <p class="calc-desc" id="calc-desc">
+              Посчитано на основе реальной статистики доходов наших моделей за последний год
+            </p>
+            <p class="calc-period">Это ориентировочный доход за месяц</p>
+          </div>
         </div>
       </div>
 
-      <div class="afford-block" id="affordBlock" style="display:none;">
+      <div class="afford-block" id="affordBlock">
         <h3 class="afford-title">Что ты сможешь себе позволить на этот доход?</h3>
+        <p class="afford-sub">Список появится как только ты выберешь количество часов и смен</p>
         <ul id="affordList" class="afford-list"></ul>
 
         <div class="afford-custom">
-          <input id="customName" type="text" placeholder="Своя цель (например, новая камера)">
+          <input id="customName" type="text" placeholder="Цель">
           <input id="customPrice" type="number" placeholder="Цена, ₽">
-          <button id="addCustomBtn">Добавить</button>
+          <button id="addCustomBtn" aria-label="Добавить пользовательскую цель в список">Добавить</button>
         </div>
       </div>
+
     </div>
+
   </div>
 </section>
+
 
 <!-- ================= 2. ГДЕ ТЫ БУДЕШЬ РАБОТАТЬ ================= -->
 <section class="interior">
@@ -147,10 +175,10 @@
 
     <div class="carousel-wrapper" data-aos="fade-up">
       <div class="carousel-track">
-        <img src="/img/interior1.webp" class="carousel-item" alt="Интерьер студии PURE">
-        <img src="/img/interior2.webp" class="carousel-item" alt="Интерьер студии PURE">
-        <img src="/img/interior3.webp" class="carousel-item" alt="Интерьер студии PURE">
-        <img src="/img/interior4.webp" class="carousel-item" alt="Интерьер студии PURE">
+        <img src="/img/interior1.webp" class="carousel-item" alt="Интерьер студии PURE в Санкт-Петербурге — уютная современная комната для комфортной работы">>>
+        <img src="/img/interior2.webp" class="carousel-item" alt="Комната студии PURE в центре Санкт-Петербурга с мягким светом и аккуратным интерьером">>>
+        <img src="/img/interior3.webp" class="carousel-item" alt="Рабочее пространство в студии PURE — профессиональное освещение и стильные детали">>
+        <img src="/img/interior4.webp" class="carousel-item" alt="Студия PURE в Санкт-Петербурге — тёплая атмосфера, современная техника и комфорт">>
       </div>
     </div>
     <div class="carousel-dots" id="carouselDots"></div>
@@ -229,7 +257,7 @@
 
     <!-- RIGHT: IMAGE -->
     <div class="workspace-right">
-      <img src="img/workspace.png" alt="workspace icon">
+      <img src="img/workspace.png" alt="Рабочее место модели в студии PURE — освещение, современная техника и уют">
     </div>
 
   </div>
@@ -245,7 +273,7 @@
 
     <div class="reviews-grid" data-aos="zoom-in">
       <div class="review-card">
-        <img src="/img/review1.png" alt="Фото модели" class="review-img">
+        <img src="/img/review1.png" alt="Анна — модель студии PURE в Санкт-Петербурге" class="review-img">
         <h3 class="review-name">Анна</h3>
         <p class="review-text">
           Работаю здесь уже полгода — уютная атмосфера, дружелюбная команда и стабильный доход. Всё прозрачно и спокойно.
@@ -253,7 +281,7 @@
       </div>
 
       <div class="review-card">
-        <img src="/img/review3.png" alt="Фото модели" class="review-img">
+        <img src="/img/review3.png" alt="Максим — модель студии PURE, делится впечатлениями о работе" class="review-img">
         <h3 class="review-name">Максим</h3>
         <p class="review-text">
           Оказалось намного интереснее, чем я ожидал. Хорошая поддержка, обучение и ощущение, что ты здесь важен.
@@ -261,7 +289,7 @@
       </div>
 
       <div class="review-card">
-        <img src="/img/review2.png" alt="Фото модели" class="review-img">
+        <img src="/img/review2.png" alt="Екатерина — модель студии PURE, рассказывает о работе в студии" class="review-img">
         <h3 class="review-name">Екатерина</h3>
         <p class="review-text">
           Студия современная, уютная. За год вышла на хороший заработок и чувствую себя уверенно.
@@ -278,7 +306,7 @@
 
             <!-- ЛЕВАЯ КОЛОНКА — КАРТИНКА -->
             <div class="schedule-image">
-                <img src="img/schedule.png" alt="Твой график">
+                <img src="img/schedule.png" alt="График работы модели в студии PURE — гибкое расписание">
             </div>
 
             <!-- ПРАВАЯ КОЛОНКА — КОНТЕНТ -->
@@ -373,26 +401,40 @@
     <h2 class="jobs-title">Вакансии</h2>
 
     <div class="jobs-grid"  data-aos="fade-up">
-      <div class="job-card">
-        <img src="/img/model-male.png" alt="Модель парень" class="job-img">
+      <div class="job-card" itemscope itemtype="https://schema.org/JobPosting">
+        <meta itemprop="title" content="Модель — парень">
+        <meta itemprop="employmentType" content="Part-time">
+        <meta itemprop="workHours" content="Гибкий график">
+        <meta itemprop="industry" content="Studio">
+        <meta itemprop="jobLocation" content="Санкт-Петербург">
+        <meta itemprop="description" content="Работа моделью в студии PURE в Санкт-Петербурге. Комфортная атмосфера, поддержка, современная техника.">
+
+        <img src="/img/model-male.png" alt="Вакансия модель — парень. Работа в студии PURE, Санкт-Петербург" class="job-img">
         <h3 class="job-role">Модель<br><span>Парень</span></h3>
         <ul class="job-reqs">
           <li>18 лет и старше</li>
           <li>Приятный внешний вид</li>
           <li>Желание зарабатывать и развиваться</li>
         </ul>
-        <button class="job-btn scroll-to-form">Стать моделью</button>
+        <button class="job-btn scroll-to-form" aria-label="Откликнуться на вакансию модели — парень">Стать моделью</button>
       </div>
 
-      <div class="job-card">
-        <img src="/img/model-female.png" alt="Модель девушка" class="job-img">
+      <div class="job-card" itemscope itemtype="https://schema.org/JobPosting">
+        <meta itemprop="title" content="Модель — девушка">
+        <meta itemprop="employmentType" content="Part-time">
+        <meta itemprop="workHours" content="Гибкий график">
+        <meta itemprop="industry" content="Studio">
+        <meta itemprop="jobLocation" content="Санкт-Петербург">
+        <meta itemprop="description" content="Работа моделью в студии PURE для девушек. Тёплая атмосфера, современное пространство, поддержка и обучение.">
+
+        <img src="/img/model-female.png" alt="Вакансия модель — девушка. Работа в студии PURE, Санкт-Петербург" class="job-img">
         <h3 class="job-role">Модель<br><span>Девушка</span></h3>
         <ul class="job-reqs">
           <li>18 лет и старше</li>
           <li>Приятный внешний вид</li>
           <li>Желание зарабатывать и развиваться</li>
         </ul>
-        <button class="job-btn scroll-to-form">Стать моделью</button>
+        <button class="job-btn scroll-to-form" aria-label="Откликнуться на вакансию модели — девушка">Стать моделью</button>
       </div>
     </div>
   </div>
@@ -403,9 +445,66 @@
   <div class="cta-inner">
     <h2>Готов(а) сделать первый шаг?</h2>
     <p>Заполни короткую анкету — и мы аккуратно проведём тебя через первые шаги в студии.</p>
-    <button class="cta-btn scroll-to-form">Заполнить анкету</button>
+    <button class="cta-btn scroll-to-form" aria-label="Перейти к анкете и подать заявку в студию PURE">Заполнить анкету</button>
   </div>
 </section>
+
+<section class="faq-section" id="faq" itemscope itemtype="https://schema.org/FAQPage">
+  <div class="faq-inner">
+    <h2 class="faq-title">Частые вопросы</h2>
+
+    <!-- 1 -->
+    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+      <button class="faq-q" itemprop="name" aria-label="Открыть ответ: Что такое студия PURE?">
+        Что такое студия PURE? <span>+</span>
+      </button>
+
+      <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+        <p itemprop="text">
+          PURE — студия в Санкт-Петербурге, созданная для спокойной и комфортной работы.
+        </p>
+        <p itemprop="text">
+          Комнаты оборудованы мягким светом, современной техникой и уютным интерьером.
+        </p>
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+      <button class="faq-q" itemprop="name" aria-label="Открыть ответ: Почему выбирают PURE?">
+        Почему выбирают PURE? <span>+</span>
+      </button>
+
+      <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+        <p itemprop="text">
+          В PURE ценят комфорт, поддержку и спокойную атмосферу.
+        </p>
+        <p itemprop="text">
+          Обучение проходит индивидуально, комнаты оснащены профессиональным светом и современной техникой.
+        </p>
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+      <button class="faq-q" itemprop="name" aria-label="Открыть ответ: Кому подходит работа в PURE?">
+        Кому подходит работа в PURE? <span>+</span>
+      </button>
+
+      <div class="faq-a" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+        <p itemprop="text">
+          Работа подходит тем, кто хочет гибкий график, поддержку и спокойную атмосферу без давления.
+        </p>
+        <p itemprop="text">
+          Мы помогаем новичкам адаптироваться и уверенно расти.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
 
 <footer class="footer">
   <p>© PURE, 2025. Санкт-Петербург</p>
@@ -415,7 +514,7 @@
 <div class="alert" id="customAlert">
   <div class="alert-box">
     <p id="alertMessage">Сообщение</p>
-    <button id="alertOk">Ок</button>
+    <button id="alertOk" aria-label="Закрыть уведомление">Ок</button>
   </div>
 </div>
 
@@ -426,5 +525,27 @@
 
 <script src="script.js"></script>
 <script src="request.js"></script>
+
+<div style="display:none;">
+  <div itemscope itemtype="https://schema.org/ImageObject">
+    <meta itemprop="contentUrl" content="/img/interior1.webp">
+    <meta itemprop="description" content="Интерьер студии PURE в Санкт-Петербурге">
+  </div>
+
+  <div itemscope itemtype="https://schema.org/ImageObject">
+    <meta itemprop="contentUrl" content="/img/interior2.webp">
+    <meta itemprop="description" content="Комната студии PURE с мягким светом">
+  </div>
+
+  <div itemscope itemtype="https://schema.org/ImageObject">
+    <meta itemprop="contentUrl" content="/img/interior3.webp">
+    <meta itemprop="description" content="Рабочее пространство студии PURE">
+  </div>
+
+  <div itemscope itemtype="https://schema.org/ImageObject">
+    <meta itemprop="contentUrl" content="/img/interior4.webp">
+    <meta itemprop="description" content="Тёплая современная студия PURE">
+  </div>
+</div>
 </body>
 </html>

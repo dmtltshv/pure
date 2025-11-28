@@ -1,7 +1,7 @@
 let products = [
   { name: "AirPods", price: 19990 },
   { name: "Новый iPhone", price: 109990 },
-  { name: "Аренда квартиры на месяц", price: 35000 }
+  { name: "Аренда квартиры", price: 35000 }
 ];
 
 // FORM SCROLL
@@ -76,6 +76,7 @@ const progressBar = document.getElementById('calc-progress-bar');
 
 const affordBlock = document.getElementById("affordBlock");
 const affordList = document.getElementById("affordList");
+const affordSub = document.querySelector('.afford-sub');
 
 let selectedHours = null;
 let selectedShifts = null;
@@ -102,23 +103,18 @@ function updateResult() {
     progressBar.style.width = '0%';
   }
 
-  // Возможные покупки
-  if (total > 0) {
-    affordBlock.style.display = "block";
     affordList.innerHTML = "";
-
+    affordSub.style.display = "none";
     products.forEach(product => {
       const weeks = product.price / total;
-      const formattedWeeks = weeks.toFixed(1).replace('.', ',');
-
+      const safeWeeks = isFinite(weeks) ? weeks : 0;
+      const formattedWeeks = safeWeeks.toFixed(1).replace('.', ',');
       const li = document.createElement("li");
       li.innerHTML = `<span>${product.name}</span><b>${formattedWeeks} недель</b>`;
       affordList.appendChild(li);
     });
-  } else {
-    affordBlock.style.display = "none";
   }
-}
+
 
 // Часы
 hourButtons.forEach(btn => {
@@ -188,3 +184,28 @@ function showAlert(message) {
     alertBox.style.display = "none";
   };
 }
+
+// FAQ toggle
+document.querySelectorAll('.faq-item').forEach(item => {
+  const btn = item.querySelector('.faq-q');
+
+  btn.addEventListener('click', () => {
+    // закрываем другие
+    document.querySelectorAll('.faq-item').forEach(i => {
+      if (i !== item) {
+        i.classList.remove('active');
+        i.querySelector('.faq-a').style.maxHeight = null;
+      }
+    });
+
+    item.classList.toggle('active');
+    const content = item.querySelector('.faq-a');
+
+    if (item.classList.contains('active')) {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } else {
+      content.style.maxHeight = null;
+    }
+  });
+});
+
