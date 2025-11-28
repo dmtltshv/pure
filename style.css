@@ -226,7 +226,7 @@ a {
   background: url('hero-bg.jpg') center/cover no-repeat;
   display: flex;
   align-items: center;
-  padding: 200px 60px 0px;
+  padding: 50px 60px 0px;
 }
 
 .hero-inner {
